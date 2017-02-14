@@ -10,14 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var im_logo: UIImageView!
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        im_logo.alpha = 0
+    
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIView.animate(withDuration: 5, animations: {self.im_logo!.alpha = 1})
+    }
+  
+    @IBAction func action_pushLogin(_ sender: Any) {
+    
+        let v2 = self.storyboard?.instantiateViewController(withIdentifier: "V2") as! ViewLogin
+        self.navigationController?.pushViewController(v2, animated: true)
+       
     }
 
 
