@@ -125,10 +125,11 @@ class ViewMath: UIViewController {
             }
         else{                                                                       // trong phep chia chi thuc hien phep chia het
             lbl_sign.text = "/"
-            let du = numb1 % numb2
+            var du = numb1 % numb2
             while ( du != 0) {
                  numb1 = Int(arc4random_uniform(9))+1
                  numb2 = Int(arc4random_uniform(9))+1
+                du = numb1%numb2
                 lbl_numb1.text = String(numb1)
                 lbl_numb2.text = String(numb2)
             }
@@ -258,6 +259,6 @@ class ViewMath: UIViewController {
             lbl_numb2Edit.text = lbl_numb2.text
         }
     }
-  
+  //
     
 }
